@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DailyDoseOfSF - Salesforce Knowledge Hub</title>
+
+    <!-- Tailwind CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+
+    <!-- jQuery for CSV Parsing -->
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.21/jquery.csv.min.js"
+        integrity="sha512-Y8iWYJDo6HiTo5xtml1g4QqHtl/PO1w+dmUpQfQSOTqKNsMhExfyPN2ncNAe9JuJUSKzwK/b6oaNPop4MXzkwg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Custom CSS -->
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/skeleton-styles.css" rel="stylesheet">
+</head>
+
+
+<body class="bg-gray-100">
+    <!-- Header -->
+    <header class="bg-sf-blue text-white py-6 shadow-lg">
+        <div
+            class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between text-center md:text-left">
+            <div class="flex items-center mb-2 md:mb-0">
+                <img src="assets/images/icon.png" alt="Daily Dose Of Salesforce Logo" class="h-10 w-10 mr-3">
+                <h1 class="text-2xl font-bold whitespace-nowrap">#DailyDoseOfSF</h1>
+            </div>
+            <p class="text-lg md:text-base text-center md:text-left">Your Daily Salesforce Knowledge Hub</p>
+        </div>
+    </header>
+
+    <!-- To Do : 
+        1) Crousel addition at the top to show some posts
+        2) Pagination Limit the number of cards to fetch 
+    -->
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <div id="posts-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Posts will be dynamically inserted here -->
+            <div class="skeleton-card skeleton">
+                <div class="skeleton-title skeleton"></div>
+                <div class="skeleton-text skeleton"></div>
+                <div class="skeleton-text skeleton short"></div>
+            </div>
+            <div class="skeleton-card skeleton">
+                <div class="skeleton-title skeleton"></div>
+                <div class="skeleton-text skeleton"></div>
+                <div class="skeleton-text skeleton short"></div>
+            </div>
+            <div class="skeleton-card skeleton">
+                <div class="skeleton-title skeleton"></div>
+                <div class="skeleton-text skeleton"></div>
+                <div class="skeleton-text skeleton short"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal for Full Post View -->
+    <div id="post-modal" class="modal hidden">
+        <div class="modal-content relative">
+            <span class="close-btn">&times;</span>
+            <h2 id="modal-title" class="text-xl font-bold mb-2"></h2>
+            <p id="modal-content" class="text-gray-700"></p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-sf-blue text-white py-4 mt-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>Created with ❤️ for the Salesforce Community</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/utils.js"></script>
+    <script src="js/postCard.js" type="module"></script>
+    <script src="js/modal.js" type="module"></script>
+    <script src="js/main.js" type="module"></script>
+</body>
+
+</html>
